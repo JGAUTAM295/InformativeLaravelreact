@@ -6,28 +6,28 @@ import {
     Route,
     useRoutes,
   } from "react-router-dom";
-import Home from './header/pages/Home';
-import AboutUs from './header/pages/AboutUs';
-import ContactUs from './header/pages/ContactUs';
-import Navbar from "./Navbar";
+// import Home from './header/pages/Home';
+// import AboutUs from './header/pages/AboutUs';
+// import ContactUs from './header/pages/ContactUs';
+// import Navbar from "./header/Navbar";
 
-const AppRoutes = () => {
-    let routes = useRoutes([
-      { path: "/", element: <Home /> },
-      { path: "about", element: <AboutUs /> },
-      { path: "contact", element: <ContactUs /> },
-    ]);
-    return routes;
-  };
+// const AppRoutes = () => {
+//     let routes = useRoutes([
+//       { path: "/", element: <Home /> },
+//       { path: "about", element: <AboutUs /> },
+//       { path: "contact", element: <ContactUs /> },
+//     ]);
+//     return routes;
+//   };
 
 function App() {
     return (
         <>
         
-        <Router>
+        {/* <Router>
         <Navbar />
             <AppRoutes />
-        </Router>
+        </Router> */}
         </>
 
         // <div className="container">  

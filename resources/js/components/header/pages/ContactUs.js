@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import HomeContact from './home/HomeContact';
+import Footer from './footer/Footer';
 
 class ContactUs extends Component {
 
@@ -10,9 +12,7 @@ class ContactUs extends Component {
     {
         return (
            
-            <div className="container">
-                <h1>Welcome to Contact Us</h1>  
-            </div>
+            <><HomeContact /><Footer /></>
         );
 
     }

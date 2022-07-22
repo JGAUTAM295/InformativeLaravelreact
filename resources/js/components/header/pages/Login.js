@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
+import Footer from './footer/Footer';
 
-class Login extends Component {
-
+class Login extends Component 
+{
     constructor(props) {
         super(props);
 
@@ -54,13 +55,16 @@ class Login extends Component {
           })
           .then((response) => {
             this.setState({ isLoading: false });
-            if (response.data.status === 200) {
-                localStorage.setItem("isLoggedIn", true);
-                localStorage.setItem("userData", JSON.stringify(response.data.data));
+            if (response.data.status === 200) 
+            {
+              localStorage.setItem("isLoggedIn", true);
+              localStorage.setItem("userData", JSON.stringify(response.data.data));
+              //console.log(JSON.stringify(response.data.data));
               this.setState({
-                msg: response.data.message,
+                //msg: response.data.message,
                 redirect: true,
-              });      
+              });
+              window.location = "/customers" 
             }
             if (
               response.data.status === "failed" &&
@@ -93,43 +97,44 @@ class Login extends Component {
     render()
     {
         return (
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card shadow">
-                            <div className="card-header">Login</div>
-                            <div className="card-body">
-                                <Form className="containers">
-                                    <FormGroup>
-                                        <Label for="email">Email id</Label>
-                                        <Input type="email" name="email" placeholder="Enter email" value={this.state.email} onChange={this.onChangehandler} />
-                                        <span className="text-danger">{this.state.msg}</span>
-                                        <span className="text-danger">{this.state.errMsgEmail}</span>
-                                    </FormGroup>
+        <><div className="ourwork">
+              <div className="container mt-5 mb-5">
+            <div className="row justify-content-center mt-5">
+              <div className="col-md-8">
+                <div className="card shadow">
+                  <div className="card-header">Login</div>
+                  <div className="card-body">
+                    <Form className="containers">
+                      <span className="text-danger">{this.state.msg}</span>
+                      <FormGroup>
+                        <Label for="email">Email id</Label>
+                        <Input type="email" name="email" placeholder="Enter email" value={this.state.email} onChange={this.onChangehandler} />
+                        <span className="text-danger">{this.state.errMsgEmail}</span>
+                      </FormGroup>
 
-                                    <FormGroup>
-                                        <Label for="password">Password</Label>
-                                        <Input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.onChangehandler} />
-                                        <span className="text-danger">{this.state.errMsgPwd}</span>
-                                    </FormGroup>
-                                    
-                                    <p className="text-danger">{this.state.errMsg}</p>
-                                    
-                                    <Button className="text-center mb-4" color="success" onClick={this.onSignInHandler}>
-                                        Sign In {this.state.isLoading ? (
-                                        <span className="spinner-border spinner-border-sm ml-5" role="status" aria-hidden="true" ></span>
-                                        ) : (
-                                        <span></span>
-                                        )}
-                                    </Button>
+                      <FormGroup>
+                        <Label for="password">Password</Label>
+                        <Input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.onChangehandler} />
+                        <span className="text-danger">{this.state.errMsgPwd}</span>
+                      </FormGroup>
 
-                                    <Link to="/signup" className="text-white ml-5">New Here? Then Create Your Account</Link>
-                                </Form>
-                            </div>
-                        </div>
-                    </div>
+                      <p className="text-danger">{this.state.errMsg}</p>
+
+                      <Button className="text-center mb-4" color="success" onClick={this.onSignInHandler}>
+                        Sign In {this.state.isLoading ? (
+                          <span className="spinner-border spinner-border-sm ml-5" role="status" aria-hidden="true"></span>
+                        ) : (
+                          <span></span>
+                        )}
+                      </Button>
+
+                      <Link to="/signup" className="text-white ml-5">New Here? Then Create Your Account</Link>
+                    </Form>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div></div><Footer /></>
         );
 
     }

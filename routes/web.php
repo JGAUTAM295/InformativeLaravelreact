@@ -18,9 +18,16 @@ use App\Http\Controllers\CustomerController;
 //     return view('welcome');
 // });
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'index']);
+Route::get('/{any}', [App\Http\Controllers\FrontendController::class, 'index']);
 
+//Auth::routes();
 
-Auth::routes();
+Auth::routes([
+    'login' => false, // Login Routes...
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

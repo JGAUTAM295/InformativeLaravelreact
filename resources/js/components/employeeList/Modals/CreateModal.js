@@ -49,10 +49,7 @@ class CreateModal extends Component {
         return (
             <>
                 <div className='row text-right mb-3 pb-3'>
-                    <button className='btn btn-info text-right col-3 offset-md-9'
-                        data-toggle="modal"
-                        data-target="#modalCreate"
-                    >
+                    <button className='btn btn-info text-center col-3 offset-md-9' data-toggle="modal" data-target="#modalCreate">
                         Add New Customer
                     </button>
                 </div>

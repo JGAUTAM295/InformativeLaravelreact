@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Homebanner from './home/Homebanner';
+import HomeContect from './home/HomeContect';
+import Homeclients from './home/Homeclients';
+import HomeContact from './home/HomeContact';
+import Footer from './footer/Footer';
 
 class Home extends Component {
 
@@ -9,10 +14,7 @@ class Home extends Component {
     render()
     {
         return (
-           
-            <div className="container">
-                <h1>Welcome to Homepage</h1>  
-            </div>
+            <><Homebanner /><HomeContect /><Homeclients /><HomeContact /><Footer /></>
         );
 
     }

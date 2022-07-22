@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
  
 class UserController extends Controller
 {
-    private $status_code    =        200;
+    private $status_code = 200;
 
     public function register(Request $request) {
         $validator              =        Validator::make($request->all(), [

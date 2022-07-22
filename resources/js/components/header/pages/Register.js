@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
+import Footer from './footer/Footer';
 
 class Register extends Component {
 
@@ -60,7 +61,8 @@ class Register extends Component {
     render()
     {
         return (
-            <div className="container">
+          <><div className="ourwork">
+            <div className="container mt-5 mb-5">
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card shadow">
@@ -99,7 +101,8 @@ class Register extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+              </div>
+            </div><Footer /></>
         );
 
     }

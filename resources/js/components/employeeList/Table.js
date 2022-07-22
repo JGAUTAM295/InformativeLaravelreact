@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import CreateModal from "./Modals/CreateModal";
 import Pagination from "react-js-pagination";
 import PreviousMap from 'postcss/lib/previous-map';
+import Footer from '../header/pages/footer/Footer';
 
 
 class Table extends Component {
@@ -63,15 +64,15 @@ class Table extends Component {
     render()
     {
         return (
-           
+            <><div className="ourwork">
             <div className="container">
                 <ToastContainer />
                 
                 <div className="row justify-content-center">
-                    <div className="col-md-8">
+                    <div className="col-md-12">
                     <CreateModal/>
-                        <div className="card">
-                        <div className="table-responsive">
+                    <div className="card">
+                    <div className="table-responsive mb-3">
                         <table className="table table-hover" id="dtBasicExample" cellSpacing="0" width="100%">
                             <thead>
                                 <tr>
@@ -87,25 +88,27 @@ class Table extends Component {
                                     })}
                             </tbody>
                         </table>
-                        </div>
-
+                    </div>
+                    <div class="text-center">
                         <Pagination
                         totalItemsCount={this.state.customersList}
                         onChange={this.handlePageChange.bind(this)}
                         activePage={this.state.activePage}
                         itemsCountPerPage={this.state.pageRangeShow}
                         pageRangeDisplayed={this.state.pageRangeShow}
-                        prevPageText={<div><i className="fa fa-arrow-left" aria-hidden="true" />Previous</div>}
-                        nextPageText={<div><i className="fa fa-arrow-right" aria-hidden="true" />Next</div>}
+                        prevPageText={<div><i className="fa fa-arrow-left" aria-hidden="true" /> Previous</div>}
+                        nextPageText={<div><i className="fa fa-arrow-right" aria-hidden="true" /> Next</div>}
                         firstPageText={<div>« First Page</div>}
                         lastPageText={<div>» Last Page</div>}
                         // hideDisabled={"false"}
                         hideFirstLastPages={"false"}
                         />
+                    </div>
                         </div>
                     </div>
                 </div>
             </div>
+            </div><Footer /></>
         );
 
     }
